@@ -2,9 +2,15 @@ let choices=document.querySelectorAll(".choice");
 let you=document.querySelector(".you");
 let AI=document.querySelector(".AI");
 let result=document.querySelector(".result");
+let winsound=new Audio("win.mp3");
+let losesound=new Audio("lose.mp3");
+let clicksound=new Audio("click.mp3");
 choices.forEach((choice)=>{
     choice.addEventListener('click',()=>{
+        clicksound.play();
         result.innerText="";
+        you.innerText="👊";
+        AI.innerText="👊";
         result.style="box-shadow: inset 2px 2px 20px rgba(57, 57, 57, 0.8),inset -2px -2px 20px rgba(51, 51, 51, 0.8);";
         startshake();
        setTimeout(()=>{
@@ -47,18 +53,22 @@ function playgame(userChoice,compChoice){
         result.style=" box-shadow: inset 2px 2px 20px rgba(245, 251, 50, 0.8),inset -2px -2px 20px rgba(234, 240, 65, 0.8);";
         result.style.color="rgba(243, 184, 56, 0.8)";
     }else if(userChoice==="stone" && compChoice==="scissor"){
+        winsound.play();
         result.innerText="YOU WON💪";
         result.style=" box-shadow: inset 2px 2px 20px rgba(9, 251, 9, 0.8),inset -2px -2px 20px rgba(109, 245, 5, 0.8);";
         result.style.color="rgba(26, 161, 11, 0.8)";
     }else if(userChoice==="paper" && compChoice==="stone"){
+        winsound.play();
         result.innerText="YOU WON💪";
         result.style=" box-shadow: inset 2px 2px 20px rgba(9, 251, 9, 0.8),inset -2px -2px 20px rgba(109, 245, 5, 0.8);";
         result.style.color="rgba(26, 161, 11, 0.8)";
     }else if(userChoice==="scissor" && compChoice==="paper"){
+        winsound.play();
         result.innerText="YOU WON💪";
         result.style=" box-shadow: inset 2px 2px 20px rgba(9, 251, 9, 0.8),inset -2px -2px 20px rgba(109, 245, 5, 0.8);";
         result.style.color="rgba(26, 161, 11, 0.8)";
     }else{
+        losesound.play();
         result.innerText="LOST😒";  
          result.style=" box-shadow: inset 2px 2px 20px rgba(251, 126, 9, 0.8),inset -2px -2px 20px rgba(252, 61, 18, 0.8);";
         result.style.color="rgba(245, 45, 10, 0.8)";

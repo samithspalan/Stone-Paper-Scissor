@@ -127,7 +127,7 @@
         font-size: 0.8rem;
     }
 }
-body{
+/* body{
     width:100vw;
     height: 100vh;
     background: #141414;
@@ -194,7 +194,7 @@ body{
 /* .you,.AI{
     animation: shake 1s linear 2;
 } */
-@keyframes shake{
+/* @keyframes shake{
     0%,50%,100%{
         transform: translateY(0px);
     }
@@ -256,4 +256,146 @@ body{
 }
 
 
+ */
+ body {
+    width: 100vw;
+    height: 100vh;
+    background: #141414;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0;
+}
 
+.game {
+    background: #3d3d3d;
+    width: 80vw;
+    height: 80vh;
+    max-width: 450px;
+    margin-top: 10vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.name {
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    font-size: x-large;
+    font-weight: 800;
+    height: 20vh;
+    color: rgba(249, 230, 65, 0.749);
+    text-align: center;
+}
+
+.me, .comp {
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.8), -2px -2px 10px rgba(0, 0, 0, 0.8);
+    background: transparent;
+    width: 30%;
+    height: 60%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 20%;
+    padding: 10px;
+}
+
+.hand {
+    width: 100%;
+    height: 30%;
+    display: flex;
+    justify-content: space-around;
+    margin-top: 2vh;
+    margin-bottom: 5vh;
+    gap: 30px;
+    font-size: 90px;
+}
+
+.choices {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 80px;
+}
+
+.choice {
+    width: 60px;
+    height: 60px;
+    font-size: 35px;
+    background: transparent;
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.8), -2px -2px 10px rgba(0, 0, 0, 0.8);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 3px;
+    transition: all 0.3s ease;
+}
+
+.choice:hover {
+    box-shadow: 2px 2px 10px rgba(59, 135, 197, 0.8), -2px -2px 10px rgba(187, 71, 205, 0.8);
+    cursor: pointer;
+}
+
+.result {
+    height: 10%;
+    width: 80%;
+    background: transparent;
+    margin-top: 25px;
+    border-radius: 10%;
+    box-shadow: inset 2px 2px 20px rgba(57, 57, 57, 0.8), inset -2px -2px 20px rgba(51, 51, 51, 0.8);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-top: 2vh;
+    font-size: x-large;
+    font-weight: 700;
+    text-align: center;
+}
+
+/* Responsive Design */
+@media (max-width: 600px) {
+    .game {
+        width: 90vw;
+        height: 90vh;
+        margin-top: 5vh;
+    }
+
+    .name {
+        font-size: large;
+    }
+
+    .hand {
+        font-size: 60px;
+        gap: 15px;
+    }
+
+    .choices {
+        gap: 30px;
+    }
+
+    .choice {
+        width: 50px;
+        height: 50px;
+        font-size: 30px;
+    }
+
+    .result {
+        font-size: large;
+        width: 90%;
+    }
+}
+@keyframes shake{
+    0%,50%,100%{
+        transform: translateY(0px);
+    }
+    25%{
+        transform: translateY(20px);
+    }
+    75%{
+        transform: translateY(-20px);
+    }
+}
